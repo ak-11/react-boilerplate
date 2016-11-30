@@ -3,10 +3,12 @@ import Message from './Message.jsx';
 
 class MessageList extends Component {
 
+  //With React, when you're inside a Class, functions do not need Const of Let when declaring.
+  //A potentially cleaner way of writing this is to include it inside of the HTML/JSX code.
   nameAndMessage () {
     return this.props.messages.map((message, index) => {
       return (
-        <Message key={index} userName={message.username} message={message.content} />
+        <Message key={message.uniqueID} userName={message.username} message={message.content} />
       )
     })
   }
